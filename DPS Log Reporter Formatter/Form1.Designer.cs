@@ -106,6 +106,7 @@ partial class Form1
         textBoxLinks.Location = new System.Drawing.Point(26, 345);
         textBoxLinks.Multiline = true;
         textBoxLinks.Name = "textBoxLinks";
+        textBoxLinks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
         textBoxLinks.Size = new System.Drawing.Size(350, 304);
         textBoxLinks.TabIndex = 6;
         // 
@@ -115,6 +116,7 @@ partial class Form1
         textBoxFormatted.Multiline = true;
         textBoxFormatted.Name = "textBoxFormatted";
         textBoxFormatted.ReadOnly = true;
+        textBoxFormatted.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
         textBoxFormatted.Size = new System.Drawing.Size(350, 304);
         textBoxFormatted.TabIndex = 7;
         // 
