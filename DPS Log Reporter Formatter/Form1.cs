@@ -55,12 +55,45 @@ public partial class Form1 : Form
 
     };
 
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
+    [SuppressMessage("ReSharper", "CommentTypo")]
+    private static string SelectHeader(string key)
+    {
+        return key switch
+        {
+            // Raids
+            "vg" or "race" or "gors" or "sab" => "Raid Wing 1 - Spirit Vale",
+            "sloth" or "trio" or "matt" => "Raid Wing 2 - Salvation Pass",
+            "esc" or "kc" or "tc" or "xera" => "Raid Wing 3 - Stronghold of the Faithful",
+            "cairn" or "mo" or "sam" or "dei" => "Raid Wing 4 - Bastion of the Penitent",
+            "sh" or "rr" or "bk" or "se" or "eyes" or "dhuum" => "Raid Wing 5 - Hall of Chains",
+            "ca" or "twins" or "qadim" => "Raid Wing 6 - Mythwright Gambit",
+            "adina" or "sabir" or "qpeer" => "Raid Wing 7 - The Key of Ahdashim",
+            "greer" or "deci" or "ura" => "Raid Wing 8 - Mount Balrior",
+            // Strikes
+            "ice" or "falln" or "frae" or "bone" or "whisp" => "Icebrood Saga Strikes",
+            "trin" or "ankka" or "li" or "void" or "olc" => "End of Dragons Strikes",
+            "dagda" or "cerus" => "Secrets of the Obscure Strikes",
+            // Fractals
+            "mama" or "siax" or "enso" => "Nightmare Fractal",
+            "skor" or "arriv" or "arkk" => "Shattered Observatory Fractal",
+            "ai" => "Sunqua Peak Fractal",
+            "kana" => "Silent Surf Fractal",
+            "???" => "Lonely Tower Fractal", // TODO - Lonely Tower Fractal
+            // Uncategorized
+            "golem" or "wvw" => "Uncategorized",
+            _ => "Unknown"
+        };
+    }
+
     private void buttonFormat_Click(object sender, EventArgs e)
     {
-        // Setup Markup
+        // Setup Initial Info
         AssignMarkup();
+        AssignClassification();
 
-        var previousTitle = "";
+        var previousHeader = "";
+        var previousCategory = "";
         var listedLogs = textBoxLinks.Text;
         var formattedLogs = Write("LOGS", Markup.Title);
         using (var reader = new StringReader(listedLogs))
@@ -71,45 +104,67 @@ public partial class Form1 : Form
                 if (line == null)
                     break;
                 var key = line.Split("_")[1];
-                if (!_logCategories.ContainsKey(key))
-                    formattedLogs += Write("UNKNOWN LOG", Markup.Category);
-                else if (_logCategories[key] != previousTitle)
+                if (_showHeader && !_logCategories.ContainsKey(key))
+                    formattedLogs += Write("UNKNOWN LOG", Markup.Header);
+                else if (_showCategory && _logCategories[key] != previousCategory)
                 {
-                    previousTitle = _logCategories[key];
-                    formattedLogs += Write(previousTitle, Markup.Category);
+                    var header = SelectHeader(key);
+                    if (_showHeader && previousHeader != header)
+                    {
+                        previousHeader = header;
+                        formattedLogs += Write(header, Markup.Header);
+                    }
+
+                    previousCategory = _logCategories[key];
+                    formattedLogs += Write(previousCategory, Markup.Category);
                 }
                 formattedLogs += Write(line, Markup.None);
             }
         }
         textBoxFormatted.Text = formattedLogs;
     }
-
+    
     #region Markup
     //Markup
-    private string _titleMarkup, _headerMarkup, _categoryMarkup;
+    private string _titleMarkupStart, _titleMarkupEnd,
+                   _headerMarkupStart, _headerMarkupEnd,
+                   _categoryMarkupStart, _categoryMarkupEnd;
     private void AssignMarkup()
     {
-        _titleMarkup = "";
-        _headerMarkup = "";
-        _categoryMarkup = "";
+        _titleMarkupStart = "";
+        _titleMarkupEnd = "";
+        _headerMarkupStart = "";
+        _headerMarkupEnd = "";
+        _categoryMarkupStart = "";
+        _categoryMarkupEnd = "";
 
         if (comboboxMarkup.Text != "Discord")
             return;
-        _titleMarkup = "__**";
-        _headerMarkup = "**";
-        _categoryMarkup = "***";
+        _titleMarkupStart = "__**";
+        _titleMarkupEnd = "**__";
+        _headerMarkupStart = "**";
+        _headerMarkupEnd = "**";
+        _categoryMarkupStart = "***";
+        _categoryMarkupEnd = "***";
     }
 
     private string Write(string text, Markup markup)
     {
-        var usedMarkup = markup switch
+        var startMarkup = markup switch
         {
-            Markup.Title => _titleMarkup,
-            Markup.Header => _headerMarkup,
-            Markup.Category => _categoryMarkup,
+            Markup.Title => _titleMarkupStart,
+            Markup.Header => _headerMarkupStart,
+            Markup.Category => _categoryMarkupStart,
             _ => ""
         };
-        return usedMarkup + text + usedMarkup + "\r\n";
+        var endMarkup = markup switch
+        {
+            Markup.Title => _titleMarkupEnd,
+            Markup.Header => _headerMarkupEnd,
+            Markup.Category => _categoryMarkupEnd,
+            _ => ""
+        };
+        return startMarkup + text + endMarkup + "\r\n";
     }
 
     public enum Markup
@@ -118,6 +173,28 @@ public partial class Form1 : Form
         Header,
         Category,
         None
+    }
+    #endregion
+    
+    #region Classifications
+
+    private bool _showCategory;
+    private bool _showHeader;
+    
+    private void AssignClassification()
+    {
+        _showCategory = false;
+        _showHeader = false;
+        switch (comboboxClassifications.Text)
+        {
+            case "All Categories":
+                _showCategory = true;
+                _showHeader = true;
+                break;
+            case "Only Sub Categories":
+                _showCategory = true;
+                break;
+        }
     }
     #endregion
 }
