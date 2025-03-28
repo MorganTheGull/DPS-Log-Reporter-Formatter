@@ -54,30 +54,15 @@ public partial class Form1 : Form
         {"golem", "Golem"}, {"wvw", "World Versus World"},
 
     };
-    
-    // Markup
-    private string _boldMarkup;
-    private string _starMarkup;
-    private void Markup()
-    {
-        _boldMarkup = "";
-        _starMarkup = "";
-
-        if (comboboxMarkup.Text == "Discord")
-        {
-            _boldMarkup = "**";
-            _starMarkup = "__";
-        }
-    }
 
     private void buttonFormat_Click(object sender, EventArgs e)
     {
         // Setup Markup
-        Markup();
+        AssignMarkup();
 
         string previousTitle = "";
         string listedLogs = textBoxLinks.Text;
-        string formattedLogs = _boldMarkup + _starMarkup + "LOGS" + _starMarkup + _boldMarkup + "\r\n";
+        string formattedLogs = Write("LOGS", Markup.Title);
         using (StringReader reader = new StringReader(listedLogs))
         {
             while (true)
@@ -87,15 +72,53 @@ public partial class Form1 : Form
                     break;
                 var key = line.Split("_")[1];
                 if (!LogCategories.ContainsKey(key))
-                    formattedLogs += _boldMarkup + "UNKNOWN LOG" + _boldMarkup + "\r\n";
+                    formattedLogs += Write("UNKNOWN LOG", Markup.Category);
                 else if (LogCategories[key] != previousTitle)
                 {
                     previousTitle = LogCategories[key];
-                    formattedLogs += _boldMarkup + previousTitle + _boldMarkup + "\r\n";
+                    formattedLogs += Write(previousTitle, Markup.Category);
                 }
-                formattedLogs += line + "\r\n";
+                formattedLogs += Write(line, Markup.None);
             }
         }
         textBoxFormatted.Text = formattedLogs;
     }
+
+    #region Markup
+    //Markup
+    private string _titleMarkup, _headerMarkup, _categoryMarkup;
+    private void AssignMarkup()
+    {
+        _titleMarkup = "";
+        _headerMarkup = "";
+        _categoryMarkup = "";
+
+        if (comboboxMarkup.Text == "Discord")
+        {
+            _titleMarkup = "__**";
+            _headerMarkup = "**";
+            _categoryMarkup = "***";
+        }
+    }
+
+    private string Write(string text, Markup markup)
+    {
+        var usedMarkup = markup switch
+        {
+            Markup.Title => _titleMarkup,
+            Markup.Header => _headerMarkup,
+            Markup.Category => _categoryMarkup,
+            _ => ""
+        };
+        return usedMarkup + text + usedMarkup + "\r\n";
+    }
+
+    public enum Markup
+    {
+        Title,
+        Header,
+        Category,
+        None
+    }
+    #endregion
 }
