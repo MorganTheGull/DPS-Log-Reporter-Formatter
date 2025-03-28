@@ -60,10 +60,10 @@ public partial class Form1 : Form
         // Setup Markup
         AssignMarkup();
 
-        string previousTitle = "";
-        string listedLogs = textBoxLinks.Text;
-        string formattedLogs = Write("LOGS", Markup.Title);
-        using (StringReader reader = new StringReader(listedLogs))
+        var previousTitle = "";
+        var listedLogs = textBoxLinks.Text;
+        var formattedLogs = Write("LOGS", Markup.Title);
+        using (var reader = new StringReader(listedLogs))
         {
             while (true)
             {
@@ -71,7 +71,7 @@ public partial class Form1 : Form
                 if (line == null)
                     break;
                 var key = line.Split("_")[1];
-                if (_logCategories.ContainsKey(key))
+                if (!_logCategories.ContainsKey(key))
                     formattedLogs += Write("UNKNOWN LOG", Markup.Category);
                 else if (_logCategories[key] != previousTitle)
                 {
