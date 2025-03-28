@@ -34,7 +34,7 @@ partial class Form1
         label1 = new System.Windows.Forms.Label();
         labelLogLinks = new System.Windows.Forms.Label();
         labelOutput = new System.Windows.Forms.Label();
-        button1 = new System.Windows.Forms.Button();
+        buttonFormat = new System.Windows.Forms.Button();
         textBoxLinks = new System.Windows.Forms.TextBox();
         textBoxFormatted = new System.Windows.Forms.TextBox();
         SuspendLayout();
@@ -89,15 +89,16 @@ partial class Form1
         labelOutput.Text = "Output";
         labelOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
-        // button1
+        // buttonFormat
         // 
-        button1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-        button1.Location = new System.Drawing.Point(3, 655);
-        button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(780, 100);
-        button1.TabIndex = 5;
-        button1.Text = "FORMAT";
-        button1.UseVisualStyleBackColor = true;
+        buttonFormat.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+        buttonFormat.Location = new System.Drawing.Point(3, 655);
+        buttonFormat.Name = "buttonFormat";
+        buttonFormat.Size = new System.Drawing.Size(780, 100);
+        buttonFormat.TabIndex = 5;
+        buttonFormat.Text = "FORMAT";
+        buttonFormat.UseVisualStyleBackColor = true;
+        buttonFormat.Click += buttonFormat_Click;
         // 
         // textBoxLinks
         // 
@@ -125,7 +126,7 @@ partial class Form1
         ClientSize = new System.Drawing.Size(784, 761);
         Controls.Add(textBoxFormatted);
         Controls.Add(textBoxLinks);
-        Controls.Add(button1);
+        Controls.Add(buttonFormat);
         Controls.Add(labelOutput);
         Controls.Add(labelLogLinks);
         Controls.Add(comboboxMarkup);
@@ -142,7 +143,7 @@ partial class Form1
 
     private System.Windows.Forms.Label labelLogLinks;
     private System.Windows.Forms.Label labelOutput;
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button buttonFormat;
 
     private System.Windows.Forms.ComboBox comboboxMarkup;
 

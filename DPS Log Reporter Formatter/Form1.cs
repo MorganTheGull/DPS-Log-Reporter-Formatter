@@ -56,11 +56,46 @@ public partial class Form1 : Form
     };
     
     // Markup
-    private string _startMarkup;
-    private string _endMarkup;
+    private string _boldMarkup;
+    private string _starMarkup;
     private void Markup()
     {
-        _startMarkup = "";
-        _endMarkup = "";
+        _boldMarkup = "";
+        _starMarkup = "";
+
+        if (comboboxMarkup.Text == "Discord")
+        {
+            _boldMarkup = "**";
+            _starMarkup = "__";
+        }
+    }
+
+    private void buttonFormat_Click(object sender, EventArgs e)
+    {
+        // Setup Markup
+        Markup();
+
+        string previousTitle = "";
+        string listedLogs = textBoxLinks.Text;
+        string formattedLogs = _boldMarkup + _starMarkup + "LOGS" + _starMarkup + _boldMarkup + "\r\n";
+        using (StringReader reader = new StringReader(listedLogs))
+        {
+            while (true)
+            {
+                var line = reader.ReadLine();
+                if (line == null)
+                    break;
+                var key = line.Split("_")[1];
+                if (!LogCategories.ContainsKey(key))
+                    formattedLogs += _boldMarkup + "UNKNOWN LOG" + _boldMarkup + "\r\n";
+                else if (LogCategories[key] != previousTitle)
+                {
+                    previousTitle = LogCategories[key];
+                    formattedLogs += _boldMarkup + previousTitle + _boldMarkup + "\r\n";
+                }
+                formattedLogs += line + "\r\n";
+            }
+        }
+        textBoxFormatted.Text = formattedLogs;
     }
 }
