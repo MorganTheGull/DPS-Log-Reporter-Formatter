@@ -48,7 +48,8 @@ public partial class Form1 : Form
         {"ai", "Ai, Keeper of the Peak"},
         // Silent Surf
         {"kana", "Kanaxai, Scythe of House Aurkus"},
-        // TODO Lonely Tower
+        // Lonely Tower
+        {"eparc", "Eparch"},
         
         // Uncategorized
         {"golem", "Golem"}, {"wvw", "World Versus World"},
@@ -79,7 +80,7 @@ public partial class Form1 : Form
             "skor" or "arriv" or "arkk" => "Shattered Observatory Fractal",
             "ai" => "Sunqua Peak Fractal",
             "kana" => "Silent Surf Fractal",
-            "???" => "Lonely Tower Fractal", // TODO - Lonely Tower Fractal
+            "eparc" => "Lonely Tower Fractal",
             // Uncategorized
             "golem" or "wvw" => "Uncategorized",
             _ => "Unknown"
