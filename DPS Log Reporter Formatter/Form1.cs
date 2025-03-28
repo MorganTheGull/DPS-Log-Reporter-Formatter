@@ -106,7 +106,7 @@ public partial class Form1 : Form
                 var key = line.Split("_")[1];
                 if (_showHeader && !_logCategories.ContainsKey(key))
                     formattedLogs += Write("UNKNOWN LOG", Markup.Header);
-                else if (_showCategory && _logCategories[key] != previousCategory)
+                else if ((_showCategory || _showHeader) && _logCategories[key] != previousCategory)
                 {
                     var header = SelectHeader(key);
                     if (_showHeader && previousHeader != header)
@@ -115,8 +115,11 @@ public partial class Form1 : Form
                         formattedLogs += Write(header, Markup.Header);
                     }
 
-                    previousCategory = _logCategories[key];
-                    formattedLogs += Write(previousCategory, Markup.Category);
+                    if (_showCategory)
+                    {
+                        previousCategory = _logCategories[key];
+                        formattedLogs += Write(previousCategory, Markup.Category);
+                    }
                 }
                 formattedLogs += Write(line, Markup.None);
             }
@@ -189,6 +192,9 @@ public partial class Form1 : Form
         {
             case "All Categories":
                 _showCategory = true;
+                _showHeader = true;
+                break;
+            case "Only Main Categories":
                 _showHeader = true;
                 break;
             case "Only Sub Categories":

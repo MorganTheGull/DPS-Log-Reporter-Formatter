@@ -55,12 +55,12 @@ partial class Form1
         // 
         comboboxMarkup.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         comboboxMarkup.FormattingEnabled = true;
-        comboboxMarkup.Items.AddRange(new object[] { "None", "Discord" });
+        comboboxMarkup.Items.AddRange(new object[] { "Discord", "None" });
         comboboxMarkup.Location = new System.Drawing.Point(26, 186);
         comboboxMarkup.Name = "comboboxMarkup";
         comboboxMarkup.Size = new System.Drawing.Size(350, 53);
         comboboxMarkup.TabIndex = 2;
-        comboboxMarkup.Text = "None";
+        comboboxMarkup.Text = "Discord";
         // 
         // label1
         // 
@@ -127,7 +127,7 @@ partial class Form1
         // 
         comboboxClassifications.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         comboboxClassifications.FormattingEnabled = true;
-        comboboxClassifications.Items.AddRange(new object[] { "All Categories", "Only Sub Categories", "None" });
+        comboboxClassifications.Items.AddRange(new object[] { "All Categories", "Only Main Categories", "Only Sub Categories", "None" });
         comboboxClassifications.Location = new System.Drawing.Point(399, 186);
         comboboxClassifications.Name = "comboboxClassifications";
         comboboxClassifications.Size = new System.Drawing.Size(350, 53);
