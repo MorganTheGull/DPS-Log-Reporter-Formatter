@@ -11,7 +11,7 @@ public partial class Form1 : Form
     
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     [SuppressMessage("ReSharper", "CommentTypo")]
-    private Dictionary<string, string> LogCategories = new Dictionary<string, string> // <log _ ending, Name>
+    private readonly Dictionary<string, string> _logCategories = new Dictionary<string, string> // <log _ ending, Name>
     {
         // RAIDS
         // Wing 1 - Spirit Vale
@@ -71,11 +71,11 @@ public partial class Form1 : Form
                 if (line == null)
                     break;
                 var key = line.Split("_")[1];
-                if (!LogCategories.ContainsKey(key))
+                if (_logCategories.ContainsKey(key))
                     formattedLogs += Write("UNKNOWN LOG", Markup.Category);
-                else if (LogCategories[key] != previousTitle)
+                else if (_logCategories[key] != previousTitle)
                 {
-                    previousTitle = LogCategories[key];
+                    previousTitle = _logCategories[key];
                     formattedLogs += Write(previousTitle, Markup.Category);
                 }
                 formattedLogs += Write(line, Markup.None);
@@ -93,12 +93,11 @@ public partial class Form1 : Form
         _headerMarkup = "";
         _categoryMarkup = "";
 
-        if (comboboxMarkup.Text == "Discord")
-        {
-            _titleMarkup = "__**";
-            _headerMarkup = "**";
-            _categoryMarkup = "***";
-        }
+        if (comboboxMarkup.Text != "Discord")
+            return;
+        _titleMarkup = "__**";
+        _headerMarkup = "**";
+        _categoryMarkup = "***";
     }
 
     private string Write(string text, Markup markup)
