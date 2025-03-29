@@ -132,7 +132,7 @@ partial class Form1
         comboboxClassifications.Name = "comboboxClassifications";
         comboboxClassifications.Size = new System.Drawing.Size(350, 53);
         comboboxClassifications.TabIndex = 9;
-        comboboxClassifications.Text = "Only Sub Categories";
+        comboboxClassifications.Text = "All Categories";
         // 
         // label2
         // 
