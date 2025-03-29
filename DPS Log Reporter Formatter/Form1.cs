@@ -144,12 +144,11 @@ public partial class Form1 : Form
 
         if (comboboxMarkup.Text != "Discord")
             return;
-        _titleMarkupStart = "__**";
-        _titleMarkupEnd = "**__";
-        _headerMarkupStart = "**";
-        _headerMarkupEnd = "**";
-        _categoryMarkupStart = "***";
-        _categoryMarkupEnd = "***";
+        _titleMarkupStart = "# __";
+        _titleMarkupEnd = "__";
+        _headerMarkupStart = "## ";
+        _categoryMarkupStart = "### *";
+        _categoryMarkupEnd = "*";
     }
 
     private string Write(string text, Markup markup)
