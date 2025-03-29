@@ -125,6 +125,8 @@ public partial class Form1 : Form
                 formattedLogs += Write(line, Markup.None);
             }
         }
+
+        formattedLogs += Write("Kill logs are always last, if kill acquired.", Markup.Ending);
         textBoxFormatted.Text = formattedLogs;
     }
     
@@ -132,7 +134,9 @@ public partial class Form1 : Form
     //Markup
     private string _titleMarkupStart, _titleMarkupEnd,
                    _headerMarkupStart, _headerMarkupEnd,
-                   _categoryMarkupStart, _categoryMarkupEnd;
+                   _categoryMarkupStart, _categoryMarkupEnd,
+                   _endingMarkupStart, _endingMarkupEnd;
+
     private void AssignMarkup()
     {
         _titleMarkupStart = "";
@@ -141,14 +145,17 @@ public partial class Form1 : Form
         _headerMarkupEnd = "";
         _categoryMarkupStart = "";
         _categoryMarkupEnd = "";
+        _endingMarkupStart = "\r\n";
+        _endingMarkupEnd = "";
 
         if (comboboxMarkup.Text != "Discord")
             return;
         _titleMarkupStart = "# __";
         _titleMarkupEnd = "__";
         _headerMarkupStart = "## ";
-        _categoryMarkupStart = "### *";
-        _categoryMarkupEnd = "*";
+        _categoryMarkupStart = "***";
+        _categoryMarkupEnd = "***";
+        _endingMarkupStart = "\r\n-# ";
     }
 
     private string Write(string text, Markup markup)
@@ -158,6 +165,7 @@ public partial class Form1 : Form
             Markup.Title => _titleMarkupStart,
             Markup.Header => _headerMarkupStart,
             Markup.Category => _categoryMarkupStart,
+            Markup.Ending => _endingMarkupStart,
             _ => ""
         };
         var endMarkup = markup switch
@@ -165,6 +173,7 @@ public partial class Form1 : Form
             Markup.Title => _titleMarkupEnd,
             Markup.Header => _headerMarkupEnd,
             Markup.Category => _categoryMarkupEnd,
+            Markup.Ending => _endingMarkupEnd,
             _ => ""
         };
         return startMarkup + text + endMarkup + "\r\n";
@@ -175,6 +184,7 @@ public partial class Form1 : Form
         Title,
         Header,
         Category,
+        Ending,
         None
     }
     #endregion
