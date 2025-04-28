@@ -125,7 +125,7 @@ public partial class Form1 : Form
                 }
                 
                 // Check if successful kill
-                using (WebClient wc = new WebClient())
+                using (var wc = new WebClient())
                 {
                     var text = wc.DownloadString(line);
                     if (text.Contains("\"hpLeft\":0,"))
