@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Net;
 
 namespace DPS_Log_Reporter_Formatter;
 
@@ -45,7 +46,7 @@ public partial class Form1 : Form
         // Shattered Observatory
         {"skor", "Skorvald"}, {"arriv", "Artsariiv"}, {"arkk", "Arkk"},
         // Sunqua Peak
-        {"ai", "Ai, Keeper of the Peak"},
+        {"ai", "Ai, Keeper of the Peak"}, // This is for Elemental & Dark Ai
         // Silent Surf
         {"kana", "Kanaxai, Scythe of House Aurkus"},
         // Lonely Tower
@@ -122,11 +123,20 @@ public partial class Form1 : Form
                         formattedLogs += Write(previousCategory, Markup.Category);
                     }
                 }
+                
+                // Check if successful kill
+                using (WebClient wc = new WebClient())
+                {
+                    var text = wc.DownloadString(line);
+                    if (text.Contains("\"hpLeft\":0,"))
+                        formattedLogs += "Kill Log: ";
+                }
+                
+                // Write Log
                 formattedLogs += Write(line, Markup.None);
             }
         }
-
-        formattedLogs += Write("Kill logs are always last, if kill acquired.", Markup.Ending);
+        
         textBoxFormatted.Text = formattedLogs;
     }
     
