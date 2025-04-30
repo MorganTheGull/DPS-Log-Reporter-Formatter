@@ -88,7 +88,7 @@ public partial class Form1 : Form
         };
     }
 
-    private void buttonFormat_Click(object sender, EventArgs e)
+    private async Task buttonFormat_Click(object sender, EventArgs e)
     {
         // Setup Initial Info
         AssignMarkup();
@@ -124,14 +124,40 @@ public partial class Form1 : Form
                     }
                 }
                 
-                // Check if successful kill
-                using (var wc = new WebClient())
+                HttpClient client = new HttpClient();
+                var checkingResponse = await client.GetAsync("https://dps.report/");
+                if (checkingResponse.IsSuccessStatusCode)
                 {
-                    var text = wc.DownloadString(line);
-                    if (text.Contains("\"hpLeft\":0,"))
-                        formattedLogs += "Kill Log: ";
+                    // Check if successful kill
+                    const string searchFor = "\"hpLeft\"";
+                    using (var wc = new WebClient())
+                    {
+                        var text = wc.DownloadString(line);
+                        var successfulKill = true;
+                        var previousKills = 0;
+                        var hpCheck = _logCategories[key] switch // For Multi-Boss Battles
+                        {
+                            "Bandit Trio" => 3,
+                            "Twin Largos" => 2,
+                            _ => 1,
+                        };
+                        for (var i = 0; i < hpCheck; i++)
+                        {
+                            previousKills = text.IndexOf(searchFor, previousKills, StringComparison.Ordinal);
+                            var substring = text.Substring(previousKills, "\"hpLeft\":0,".Length);
+                            previousKills++;
+                            if ((!substring.Contains("\"hpLeft\":0,")))
+                            {
+                                successfulKill = false;
+                                break;
+                            }
+                        }
+
+                        if (successfulKill)
+                            formattedLogs += "Kill Log: ";
+                    }
                 }
-                
+
                 // Write Log
                 formattedLogs += Write(line, Markup.None);
             }
