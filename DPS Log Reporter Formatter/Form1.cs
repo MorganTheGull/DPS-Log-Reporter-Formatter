@@ -88,11 +88,19 @@ public partial class Form1 : Form
         };
     }
 
-    private async Task buttonFormat_Click(object sender, EventArgs e)
+    private async void buttonFormat_Click(object sender, EventArgs e)
     {
+        buttonFormat.Enabled = false;
+        buttonFormat.Text = "Formatting ...";
+        
         // Setup Initial Info
         AssignMarkup();
         AssignClassification();
+        
+        var client = new HttpClient();
+        var checkingResponse = await client.GetAsync("https://dps.report/");
+        var errorConnecting = (checkingResponse.IsSuccessStatusCode)
+            ? "" : "Unable to connect to `dps.report`. Kill logs not marked.";
 
         var previousHeader = "";
         var previousCategory = "";
@@ -124,8 +132,6 @@ public partial class Form1 : Form
                     }
                 }
                 
-                HttpClient client = new HttpClient();
-                var checkingResponse = await client.GetAsync("https://dps.report/");
                 if (checkingResponse.IsSuccessStatusCode)
                 {
                     // Check if successful kill
@@ -147,10 +153,7 @@ public partial class Form1 : Form
                             var substring = text.Substring(previousKills, "\"hpLeft\":0,".Length);
                             previousKills++;
                             if ((!substring.Contains("\"hpLeft\":0,")))
-                            {
                                 successfulKill = false;
-                                break;
-                            }
                         }
 
                         if (successfulKill)
@@ -162,8 +165,15 @@ public partial class Form1 : Form
                 formattedLogs += Write(line, Markup.None);
             }
         }
+
+        // Any error connecting?
+        
+        if (!checkingResponse.IsSuccessStatusCode)
+            formattedLogs += Write(errorConnecting, Markup.Ending);
         
         textBoxFormatted.Text = formattedLogs;
+        buttonFormat.Enabled = true;
+        buttonFormat.Text = "Format";
     }
     
     #region Markup
