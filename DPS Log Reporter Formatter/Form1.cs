@@ -12,81 +12,85 @@ public partial class Form1 : Form
     
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     [SuppressMessage("ReSharper", "CommentTypo")]
-    private readonly Dictionary<string, string> _logCategories = new Dictionary<string, string> // <log _ ending, Name>
+    private readonly Dictionary<string, FightInfo> _logCategories = new() // <log _ ending, {BossName, HeaderName, TrackedEnemies = 1}>
     {
         // RAIDS
         // Wing 1 - Spirit Vale
-        {"vg", "Vale Guardian"}, {"race", "Ethereal Barrier"}, {"gors", "Gorseval the Multifarious"}, {"sab", "Sabetha the Saboteur"}, 
+        {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
+        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale"}},
+        {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
+        {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
         // Wing 2 - Salvation Pass
-        {"sloth", "Slothasor"}, {"trio", "Bandit Trio"}, {"matt", "Matthias Gabrel"}, 
+        {"sloth", new FightInfo {Category = "Slothasor", Header = "Raid Wing 2 - Salvation Pass"}},
+        {"trio", new FightInfo {Category = "Bandit Trio", Header = "Raid Wing 2 - Salvation Pass", TrackedEnemies = 3}},
+        {"matt", new FightInfo {Category = "Matthias Gabrel", Header = "Raid Wing 2 - Salvation Pass"}},
         // Wing 3 - Stronghold of the Faithful
-        {"esc", "Escort"}, {"kc", "Keep Construct"}, {"tc", "Twisted Castle"}, {"xera", "Xera"}, 
+        {"esc", new FightInfo {Category = "Escort", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"kc", new FightInfo {Category = "Keep Construct", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"tc", new FightInfo {Category = "Twisted Castle", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"xera", new FightInfo {Category = "Xera", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         // Wing 4 - Bastion of the Penitent
-        {"cairn", "Cairn the Indomitable"}, {"mo", "Mursaat Overseer"}, {"sam", "Samarog"}, {"dei", "Deimos"}, 
+        {"cairn", new FightInfo {Category = "Cairn the Indomitable", Header = "Raid Wing 4 - Bastion of the Penitent"}},
+        {"mo", new FightInfo {Category = "Mursaat Overseer", Header = "Raid Wing 4 - Bastion of the Penitent"}},
+        {"sam", new FightInfo {Category = "Samarog", Header = "Raid Wing 4 - Bastion of the Penitent"}},
+        {"dei", new FightInfo {Category = "Deimos", Header = "Raid Wing 4 - Bastion of the Penitent"}},
         // Wing 5 - Hall of Chains
-        {"sh", "Soulless Horror"}, {"rr", "River of Souls"}, {"bk", "Broken King"}, {"se", "Eater of Souls"}, {"eyes", "Statue of Darkness"}, {"dhuum", "Dhuum"}, 
+        {"sh", new FightInfo {Category = "Soulless Horror", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"rr", new FightInfo {Category = "River of Souls", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"bk", new FightInfo {Category = "Broken King", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"se", new FightInfo {Category = "Eater of Souls", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"eyes", new FightInfo {Category = "Statue of Darkness", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"dhuum", new FightInfo {Category = "Dhuum", Header = "Raid Wing 5 - Hall of Chains"}},
         // Wing 6 - Mythwright Gambit
-        {"ca", "Conjured Amalgamate"}, {"twins", "Twin Largos"}, {"qadim", "Qadim"}, 
+        {"ca", new FightInfo {Category = "Conjured Amalgamate", Header = "Raid Wing 6 - Mythwright Gambit"}},
+        {"twins", new FightInfo {Category = "Twin Largos", Header = "Raid Wing 6 - Mythwright Gambit", TrackedEnemies = 2}},
+        {"qadim", new FightInfo {Category = "Qadim", Header = "Raid Wing 6 - Mythwright Gambit"}},
         // Wing 7 - The Key of Ahdashim
-        {"adina", "Cardinal Adina"}, {"sabir", "Cardinal Sabir"}, {"qpeer", "Qadim the Peerless"}, 
+        {"adina", new FightInfo {Category = "Cardinal Adina", Header = "Raid Wing 7 - The Key of Ahdashim"}},
+        {"sabir", new FightInfo {Category = "Cardinal Sabir", Header = "Raid Wing 7 - The Key of Ahdashim"}},
+        {"qpeer", new FightInfo {Category = "Qadim the Peerless", Header = "Raid Wing 7 - The Key of Ahdashim"}},
         // Wing 8 - Mount Balrior
-        {"greer", "Greer, The Blightbringer"}, {"deci", "Decima, the Stormsinger"}, {"ura", "Ura, the Steamshrieker"},
+        {"greer", new FightInfo {Category = "Greer, the Blightbringer", Header = "Raid Wing 8 - Mount Balrior"}},
+        {"deci", new FightInfo {Category = "Decima, the Stormsinger", Header = "Raid Wing 8 - Mount Balrior"}},
+        {"ura", new FightInfo {Category = "Ura, the Steamshrieker", Header = "Raid Wing 8 - Mount Balrior"}},
         
         // STRIKES
         // Icebrood Saga
-        {"ice", "Icebrood Construct"}, {"falln", "The Voice and the Claw"}, {"frae", "Fraenir of Jormag"}, {"bone", "Boneskinner"}, {"whisp", "Whisper of Jormag"},
+        {"ice", new FightInfo {Category = "Icebrood Construct", Header = "Icebrood Saga Strikes"}},
+        {"falln", new FightInfo {Category = "The Voice and the Claw", Header = "Icebrood Saga Strikes"}},
+        {"frae", new FightInfo {Category = "Fraenir of Jormag", Header = "Icebrood Saga Strikes"}},
+        {"bone", new FightInfo {Category = "Boneskinner", Header = "Icebrood Saga Strikes"}},
+        {"whisp", new FightInfo {Category = "Whisper of Jormag", Header = "Icebrood Saga Strikes"}},
         // End of Dragons
-        {"trin", "Aetherblade Hideout"}, {"ankka", "Xunlai Jade Junkyard"}, {"li", "Kaineng Overlook"}, {"void", "Harvest Temple"}, {"olc", "Old Lion's Court"}, 
+        {"trin", new FightInfo {Category = "Aetherblade Hideout", Header = "End of Dragons Strikes"}},
+        {"ankka", new FightInfo {Category = "Xunlai Jade Junkyard", Header = "End of Dragons Strikes"}},
+        {"li", new FightInfo {Category = "Kaineng Overlook", Header = "End of Dragons Strikes"}},
+        {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes"}}, // TODO Double Check Tracked Enemies
+        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes"}}, // TODO Double Check Tracked Enemies
         // Secrets of the Obscure
-        {"dagda", "Cosmic Observatory"}, {"cerus", "Temple of Febe"},
+        {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
+        {"Cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
         
         // Fractals
         // Nightmare
-        {"mama", "MAMA"}, {"siax", "Siax the Corrupted"}, {"enso", "Ensolyss of the Endless Torment"},
+        {"mama", new FightInfo {Category = "MAMA", Header = "Nightmare Fractal"}},
+        {"siax", new FightInfo {Category = "Siax the Corrupted", Header = "Nightmare Fractal"}},
+        {"enso", new FightInfo {Category = "Ensolyss of the Endless Torment", Header = "Nightmare Fractal"}},
         // Shattered Observatory
-        {"skor", "Skorvald"}, {"arriv", "Artsariiv"}, {"arkk", "Arkk"},
+        {"skor", new FightInfo {Category = "Skorvald", Header = "Shattered Observatory Fractal"}},
+        {"arriv", new FightInfo {Category = "Artsariiv", Header = "Shattered Observatory Fractal"}},
+        {"arkk", new FightInfo {Category = "Arkk", Header = "Shattered Observatory Fractal"}},
         // Sunqua Peak
-        {"ai", "Ai, Keeper of the Peak"}, // This is for Elemental & Dark Ai
+        {"ai", new FightInfo {Category = "Ai, Keeper of the Peak", Header = "Sunqua Peak Fractal"}}, // Elemental or Dark Ai
         // Silent Surf
-        {"kana", "Kanaxai, Scythe of House Aurkus"},
+        {"kana", new FightInfo {Category = "Kanaxai, Scythe of House Aurkus", Header = "Silent Surf Fractal"}},
         // Lonely Tower
-        {"eparc", "Eparch"},
+        {"eparc", new FightInfo {Category = "Eparch", Header = "Lonely Tower Fractal"}},
         
         // Uncategorized
-        {"golem", "Golem"}, {"wvw", "World Versus World"},
-
+        {"golem", new FightInfo {Category = "Golem", Header = "Uncategorized"}},
+        {"wvw", new FightInfo {Category = "World Versus World", Header = "Uncategorized"}},
     };
-
-    [SuppressMessage("ReSharper", "StringLiteralTypo")]
-    [SuppressMessage("ReSharper", "CommentTypo")]
-    private static string SelectHeader(string key)
-    {
-        return key switch
-        {
-            // Raids
-            "vg" or "race" or "gors" or "sab" => "Raid Wing 1 - Spirit Vale",
-            "sloth" or "trio" or "matt" => "Raid Wing 2 - Salvation Pass",
-            "esc" or "kc" or "tc" or "xera" => "Raid Wing 3 - Stronghold of the Faithful",
-            "cairn" or "mo" or "sam" or "dei" => "Raid Wing 4 - Bastion of the Penitent",
-            "sh" or "rr" or "bk" or "se" or "eyes" or "dhuum" => "Raid Wing 5 - Hall of Chains",
-            "ca" or "twins" or "qadim" => "Raid Wing 6 - Mythwright Gambit",
-            "adina" or "sabir" or "qpeer" => "Raid Wing 7 - The Key of Ahdashim",
-            "greer" or "deci" or "ura" => "Raid Wing 8 - Mount Balrior",
-            // Strikes
-            "ice" or "falln" or "frae" or "bone" or "whisp" => "Icebrood Saga Strikes",
-            "trin" or "ankka" or "li" or "void" or "olc" => "End of Dragons Strikes",
-            "dagda" or "cerus" => "Secrets of the Obscure Strikes",
-            // Fractals
-            "mama" or "siax" or "enso" => "Nightmare Fractal",
-            "skor" or "arriv" or "arkk" => "Shattered Observatory Fractal",
-            "ai" => "Sunqua Peak Fractal",
-            "kana" => "Silent Surf Fractal",
-            "eparc" => "Lonely Tower Fractal",
-            // Uncategorized
-            "golem" or "wvw" => "Uncategorized",
-            _ => "Unknown"
-        };
-    }
 
     private async void buttonFormat_Click(object sender, EventArgs e)
     {
@@ -99,11 +103,12 @@ public partial class Form1 : Form
         
         var client = new HttpClient();
         var checkingResponse = await client.GetAsync("https://dps.report/");
-        var errorConnecting = (checkingResponse.IsSuccessStatusCode)
+        var connected = checkingResponse.IsSuccessStatusCode;
+        var errorConnecting = connected
             ? "" : "Unable to connect to `dps.report`. Kill logs not marked.";
 
         var previousHeader = "";
-        var previousCategory = "";
+        var previousBossKey = "";
         var listedLogs = textBoxLinks.Text;
         var formattedLogs = Write("LOGS", Markup.Title);
         using (var reader = new StringReader(listedLogs))
@@ -116,23 +121,21 @@ public partial class Form1 : Form
                 var key = line.Split("_")[1];
                 if (_showHeader && !_logCategories.ContainsKey(key))
                     formattedLogs += Write("UNKNOWN LOG", Markup.Header);
-                else if ((_showCategory || _showHeader) && _logCategories[key] != previousCategory)
+                else if ((_showCategory || _showHeader) && key != previousBossKey)
                 {
-                    var header = SelectHeader(key);
+                    var header = _logCategories[key].Header;
                     if (_showHeader && previousHeader != header)
                     {
                         previousHeader = header;
                         formattedLogs += Write(header, Markup.Header);
                     }
 
-                    if (_showCategory)
-                    {
-                        previousCategory = _logCategories[key];
-                        formattedLogs += Write(previousCategory, Markup.Category);
-                    }
+                    var category = _logCategories[key].Category;
+                    if (_showCategory && previousBossKey != category)
+                        previousBossKey = category;
                 }
                 
-                if (checkingResponse.IsSuccessStatusCode)
+                if (connected)
                 {
                     // Check if successful kill
                     const string searchFor = "\"hpLeft\"";
@@ -141,12 +144,7 @@ public partial class Form1 : Form
                         var text = wc.DownloadString(line);
                         var successfulKill = true;
                         var previousKills = 0;
-                        var hpCheck = _logCategories[key] switch // For Multi-Boss Battles
-                        {
-                            "Bandit Trio" => 3,
-                            "Twin Largos" => 2,
-                            _ => 1,
-                        };
+                        var hpCheck = _logCategories[key].TrackedEnemies;
                         for (var i = 0; i < hpCheck; i++)
                         {
                             previousKills = text.IndexOf(searchFor, previousKills, StringComparison.Ordinal);
@@ -174,6 +172,13 @@ public partial class Form1 : Form
         textBoxFormatted.Text = formattedLogs;
         buttonFormat.Enabled = true;
         buttonFormat.Text = "Format";
+    }
+
+    public class FightInfo
+    {
+        public string Category { get; init; } = "";
+        public string Header { get; init; } = "";
+        public int TrackedEnemies { get; init; } = 1;
     }
     
     #region Markup
