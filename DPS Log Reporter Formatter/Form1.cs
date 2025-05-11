@@ -176,8 +176,8 @@ public partial class Form1 : Form
 
     public class FightInfo
     {
-        public string Category { get; init; } = "";
-        public string Header { get; init; } = "";
+        public string? Category { get; init; }
+        public string? Header { get; init; }
         public int TrackedEnemies { get; init; } = 1;
     }
     
