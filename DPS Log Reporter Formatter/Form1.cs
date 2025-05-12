@@ -66,7 +66,7 @@ public partial class Form1 : Form
         {"ankka", new FightInfo {Category = "Xunlai Jade Junkyard", Header = "End of Dragons Strikes"}},
         {"li", new FightInfo {Category = "Kaineng Overlook", Header = "End of Dragons Strikes"}},
         {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes"}}, // TODO Double Check Tracked Enemies
-        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes"}}, // TODO Double Check Tracked Enemies
+        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes", TrackedEnemies = 3}},
         // Secrets of the Obscure
         {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
         {"Cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
@@ -176,13 +176,12 @@ public partial class Form1 : Form
 
     public class FightInfo
     {
-        public string? Category { get; init; }
-        public string? Header { get; init; }
+        public string Category { get; init; } = "";
+        public string Header { get; init; } = "";
         public int TrackedEnemies { get; init; } = 1;
     }
     
     #region Markup
-    //Markup
     private string _titleMarkupStart, _titleMarkupEnd,
                    _headerMarkupStart, _headerMarkupEnd,
                    _categoryMarkupStart, _categoryMarkupEnd,
