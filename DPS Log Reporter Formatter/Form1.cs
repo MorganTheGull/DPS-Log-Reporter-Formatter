@@ -132,7 +132,10 @@ public partial class Form1 : Form
 
                     var category = _logCategories[key].Category;
                     if (_showCategory && previousBossKey != category)
+                    {
                         previousBossKey = category;
+                        formattedLogs += Write(category, Markup.Category);
+                    }
                 }
                 
                 if (connected)
