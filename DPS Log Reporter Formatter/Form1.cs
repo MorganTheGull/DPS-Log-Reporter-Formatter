@@ -17,7 +17,7 @@ public partial class Form1 : Form
         // RAIDS
         // Wing 1 - Spirit Vale
         {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale"}}, // TODO Double Check Tracked Enemies
+        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
         {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
         {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
         // Wing 2 - Salvation Pass
