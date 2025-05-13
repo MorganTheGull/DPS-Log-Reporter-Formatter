@@ -17,7 +17,7 @@ public partial class Form1 : Form
         // RAIDS
         // Wing 1 - Spirit Vale
         {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale"}},
+        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale"}}, // TODO Double Check Tracked Enemies
         {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
         {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
         // Wing 2 - Salvation Pass
@@ -65,7 +65,7 @@ public partial class Form1 : Form
         {"trin", new FightInfo {Category = "Aetherblade Hideout", Header = "End of Dragons Strikes"}},
         {"ankka", new FightInfo {Category = "Xunlai Jade Junkyard", Header = "End of Dragons Strikes"}},
         {"li", new FightInfo {Category = "Kaineng Overlook", Header = "End of Dragons Strikes"}},
-        {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes"}}, // TODO Double Check Tracked Enemies
+        {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes", TrackedEnemies = 9}},
         {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes", TrackedEnemies = 3}},
         // Secrets of the Obscure
         {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
