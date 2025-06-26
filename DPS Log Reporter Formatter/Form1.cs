@@ -86,10 +86,13 @@ public partial class Form1 : Form
         {"kana", new FightInfo {Category = "Kanaxai, Scythe of House Aurkus", Header = "Silent Surf Fractal"}},
         // Lonely Tower
         {"eparc", new FightInfo {Category = "Eparch", Header = "Lonely Tower Fractal"}},
+        // Kinfall
+        {"boss", new FightInfo {Category = "Whispering Shadow", Header = "Kinfall Fractal"}}, // TODO Swap 'boss' to kinfall fractals code once its added
         
         // Uncategorized
         {"golem", new FightInfo {Category = "Golem", Header = "Uncategorized"}},
         {"wvw", new FightInfo {Category = "World Versus World", Header = "Uncategorized"}},
+        // {"boss", new FightInfo {Category = "Uncategorized Boss", Header = "Uncategorized"}}, // TODO Re-Enable this once Kinfall Fractal boss gets its own code
     };
 
     private async void buttonFormat_Click(object sender, EventArgs e)
