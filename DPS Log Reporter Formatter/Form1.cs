@@ -121,6 +121,8 @@ public partial class Form1 : Form
                 var line = reader.ReadLine();
                 if (line == null)
                     break;
+                if (!line.Contains('_'))
+                    continue;
                 var key = line.Split("_")[1];
                 if (_showHeader && !_logCategories.ContainsKey(key))
                     formattedLogs += Write("UNKNOWN LOG", Markup.Header);
@@ -143,25 +145,32 @@ public partial class Form1 : Form
                 
                 if (connected)
                 {
-                    // Check if successful kill
-                    const string searchFor = "\"hpLeft\"";
-                    using (var wc = new WebClient())
+                    try
                     {
-                        var text = wc.DownloadString(line);
-                        var successfulKill = true;
-                        var previousKills = 0;
-                        var hpCheck = _logCategories[key].TrackedEnemies;
-                        for (var i = 0; i < hpCheck; i++)
+                        // Check if successful kill
+                        const string searchFor = "\"hpLeft\"";
+                        using (var wc = new WebClient())
                         {
-                            previousKills = text.IndexOf(searchFor, previousKills, StringComparison.Ordinal);
-                            var substring = text.Substring(previousKills, "\"hpLeft\":0,".Length);
-                            previousKills++;
-                            if ((!substring.Contains("\"hpLeft\":0,")))
-                                successfulKill = false;
-                        }
+                            var text = wc.DownloadString(line);
+                            var successfulKill = true;
+                            var previousKills = 0;
+                            var hpCheck = _logCategories[key].TrackedEnemies;
+                            for (var i = 0; i < hpCheck; i++)
+                            {
+                                previousKills = text.IndexOf(searchFor, previousKills, StringComparison.Ordinal);
+                                var substring = text.Substring(previousKills, "\"hpLeft\":0,".Length);
+                                previousKills++;
+                                if ((!substring.Contains("\"hpLeft\":0,")))
+                                    successfulKill = false;
+                            }
 
-                        if (successfulKill)
-                            formattedLogs += "Kill Log: ";
+                            if (successfulKill)
+                                formattedLogs += "Kill Log: ";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // ignored
                     }
                 }
 
