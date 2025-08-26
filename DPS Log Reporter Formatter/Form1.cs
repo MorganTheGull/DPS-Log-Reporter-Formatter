@@ -69,7 +69,7 @@ public partial class Form1 : Form
         {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes", TrackedEnemies = 3}},
         // Secrets of the Obscure
         {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
-        {"Cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
+        {"cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
         
         // Fractals
         // Nightmare
