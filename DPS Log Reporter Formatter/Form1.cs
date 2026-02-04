@@ -70,6 +70,10 @@ public partial class Form1 : Form
         // Secrets of the Obscure
         {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
         {"cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
+        // Visions of Eternity
+        {"boss", new FightInfo {Category = "Guardian's Glade", Header = "Visions of Eternity Strikes"}},
+        // Festivals
+        {"frezi", new FightInfo {Category = "Secret Lair of the Snowmen", Header = "Festival Strikes"}},
         
         // Fractals
         // Nightmare
@@ -87,12 +91,12 @@ public partial class Form1 : Form
         // Lonely Tower
         {"eparc", new FightInfo {Category = "Eparch", Header = "Lonely Tower Fractal"}},
         // Kinfall
-        {"boss", new FightInfo {Category = "Whispering Shadow", Header = "Kinfall Fractal"}}, // TODO Swap 'boss' to kinfall fractals code once its added
+        {"ws", new FightInfo {Category = "Whispering Shadow", Header = "Kinfall Fractal"}},
         
         // Uncategorized
         {"golem", new FightInfo {Category = "Golem", Header = "Uncategorized"}},
         {"wvw", new FightInfo {Category = "World Versus World", Header = "Uncategorized"}},
-        // {"boss", new FightInfo {Category = "Uncategorized Boss", Header = "Uncategorized"}}, // TODO Re-Enable this once Kinfall Fractal boss gets its own code
+        // {"boss", new FightInfo {Category = "Uncategorized Boss", Header = "Uncategorized"}}, // TODO Re-Enable this once Guardian's Glade boss gets its own code
     };
 
     private async void buttonFormat_Click(object sender, EventArgs e)
