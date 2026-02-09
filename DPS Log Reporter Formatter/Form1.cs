@@ -14,10 +14,10 @@ public partial class Form1 : Form
     [SuppressMessage("ReSharper", "CommentTypo")]
     private readonly Dictionary<string, FightInfo> _logCategories = new() // <log _ ending, {BossName, HeaderName, TrackedEnemies = 1}>
     {
-        // RAIDS
+        // RAID WINGS
         // Wing 1 - Spirit Vale
         {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
+        {"race", new FightInfo {Category = "Traverse the Spirit Woods", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
         {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
         {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
         // Wing 2 - Salvation Pass
@@ -25,7 +25,7 @@ public partial class Form1 : Form
         {"trio", new FightInfo {Category = "Bandit Trio", Header = "Raid Wing 2 - Salvation Pass", TrackedEnemies = 3}},
         {"matt", new FightInfo {Category = "Matthias Gabrel", Header = "Raid Wing 2 - Salvation Pass"}},
         // Wing 3 - Stronghold of the Faithful
-        {"esc", new FightInfo {Category = "Escort", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"esc", new FightInfo {Category = "Siege the Stronghold", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"kc", new FightInfo {Category = "Keep Construct", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"tc", new FightInfo {Category = "Twisted Castle", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"xera", new FightInfo {Category = "Xera", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
@@ -55,6 +55,9 @@ public partial class Form1 : Form
         {"ura", new FightInfo {Category = "Ura, the Steamshrieker", Header = "Raid Wing 8 - Mount Balrior"}},
         
         // STRIKES
+        // Core Game
+        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "Core Game Strikes", TrackedEnemies = 3}},
+        {"frezi", new FightInfo {Category = "Secret Lair of the Snowmen", Header = "Core Game Strikes"}},
         // Icebrood Saga
         {"ice", new FightInfo {Category = "Icebrood Construct", Header = "Icebrood Saga Strikes"}},
         {"falln", new FightInfo {Category = "The Voice and the Claw", Header = "Icebrood Saga Strikes"}},
@@ -66,14 +69,11 @@ public partial class Form1 : Form
         {"ankka", new FightInfo {Category = "Xunlai Jade Junkyard", Header = "End of Dragons Strikes"}},
         {"li", new FightInfo {Category = "Kaineng Overlook", Header = "End of Dragons Strikes"}},
         {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes", TrackedEnemies = 9}},
-        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "End of Dragons Strikes", TrackedEnemies = 3}},
         // Secrets of the Obscure
         {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
         {"cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
         // Visions of Eternity
         {"boss", new FightInfo {Category = "Guardian's Glade", Header = "Visions of Eternity Strikes"}},
-        // Festivals
-        {"frezi", new FightInfo {Category = "Secret Lair of the Snowmen", Header = "Festival Strikes"}},
         
         // Fractals
         // Nightmare
