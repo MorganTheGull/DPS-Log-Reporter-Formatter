@@ -141,7 +141,7 @@ public partial class Form1 : Form
                     }
                     
                     var header = _logCategories[key].Header;
-                    if (previousHeader != header)
+                    if (previousHeader != header && header != "")
                     {
                         previousHeader = header;
                         formattedLogs += Write(header, Markup.Header);
