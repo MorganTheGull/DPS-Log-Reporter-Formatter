@@ -14,10 +14,10 @@ public partial class Form1 : Form
     [SuppressMessage("ReSharper", "CommentTypo")]
     private readonly Dictionary<string, FightInfo> _logCategories = new() // <log _ ending, {BossName, HeaderName, TrackedEnemies = 1}>
     {
-        // RAIDS
+        // RAID WINGS
         // Wing 1 - Spirit Vale
         {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"race", new FightInfo {Category = "Ethereal Barrier", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
+        {"race", new FightInfo {Category = "Traverse the Spirit Woods", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
         {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
         {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
         // Wing 2 - Salvation Pass
@@ -25,7 +25,7 @@ public partial class Form1 : Form
         {"trio", new FightInfo {Category = "Bandit Trio", Header = "Raid Wing 2 - Salvation Pass", TrackedEnemies = 3}},
         {"matt", new FightInfo {Category = "Matthias Gabrel", Header = "Raid Wing 2 - Salvation Pass"}},
         // Wing 3 - Stronghold of the Faithful
-        {"esc", new FightInfo {Category = "Escort", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"esc", new FightInfo {Category = "Siege the Stronghold", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"kc", new FightInfo {Category = "Keep Construct", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"tc", new FightInfo {Category = "Twisted Castle", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
         {"xera", new FightInfo {Category = "Xera", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
