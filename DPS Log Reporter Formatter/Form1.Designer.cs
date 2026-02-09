@@ -37,8 +37,6 @@ partial class Form1
         buttonFormat = new System.Windows.Forms.Button();
         textBoxLinks = new System.Windows.Forms.TextBox();
         textBoxFormatted = new System.Windows.Forms.TextBox();
-        comboboxClassifications = new System.Windows.Forms.ComboBox();
-        label2 = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // labelTitle
@@ -56,7 +54,7 @@ partial class Form1
         comboboxMarkup.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         comboboxMarkup.FormattingEnabled = true;
         comboboxMarkup.Items.AddRange(new object[] { "Discord", "None" });
-        comboboxMarkup.Location = new System.Drawing.Point(26, 186);
+        comboboxMarkup.Location = new System.Drawing.Point(213, 186);
         comboboxMarkup.Name = "comboboxMarkup";
         comboboxMarkup.Size = new System.Drawing.Size(350, 53);
         comboboxMarkup.TabIndex = 2;
@@ -65,7 +63,7 @@ partial class Form1
         // label1
         // 
         label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(26, 103);
+        label1.Location = new System.Drawing.Point(213, 103);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(350, 60);
         label1.TabIndex = 1;
@@ -123,35 +121,12 @@ partial class Form1
         textBoxFormatted.Size = new System.Drawing.Size(350, 304);
         textBoxFormatted.TabIndex = 7;
         // 
-        // comboboxClassifications
-        // 
-        comboboxClassifications.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        comboboxClassifications.FormattingEnabled = true;
-        comboboxClassifications.Items.AddRange(new object[] { "All Categories", "Only Main Categories", "Only Sub Categories", "None" });
-        comboboxClassifications.Location = new System.Drawing.Point(399, 186);
-        comboboxClassifications.Name = "comboboxClassifications";
-        comboboxClassifications.Size = new System.Drawing.Size(350, 53);
-        comboboxClassifications.TabIndex = 9;
-        comboboxClassifications.Text = "All Categories";
-        // 
-        // label2
-        // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(399, 103);
-        label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(350, 60);
-        label2.TabIndex = 8;
-        label2.Text = "Classifications";
-        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.ControlDarkDark;
         ClientSize = new System.Drawing.Size(784, 761);
-        Controls.Add(comboboxClassifications);
-        Controls.Add(label2);
         Controls.Add(textBoxFormatted);
         Controls.Add(textBoxLinks);
         Controls.Add(buttonFormat);
@@ -164,9 +139,6 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
-
-    private System.Windows.Forms.ComboBox comboboxClassifications;
-    private System.Windows.Forms.Label label2;
 
     private System.Windows.Forms.TextBox textBoxFormatted;
 

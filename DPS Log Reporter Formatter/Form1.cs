@@ -16,86 +16,86 @@ public partial class Form1 : Form
     {
         // RAID WINGS
         // Wing 1 - Spirit Vale
-        {"vg", new FightInfo {Category = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"race", new FightInfo {Category = "Traverse the Spirit Woods", Header = "Raid Wing 1 - Spirit Vale", TrackedEnemies = 4}},
-        {"gors", new FightInfo {Category = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale"}},
-        {"sab", new FightInfo {Category = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale"}},
+        {"vg", new FightInfo {Boss = "Vale Guardian", Header = "Raid Wing 1 - Spirit Vale", Expansion = "Heart of Thorns"}},
+        {"race", new FightInfo {Boss = "Traverse the Spirit Woods", Header = "Raid Wing 1 - Spirit Vale", Expansion = "Heart of Thorns", TrackedEnemies = 4}},
+        {"gors", new FightInfo {Boss = "Gorseval the Multifarious", Header = "Raid Wing 1 - Spirit Vale", Expansion = "Heart of Thorns"}},
+        {"sab", new FightInfo {Boss = "Sabetha the Saboteur", Header = "Raid Wing 1 - Spirit Vale", Expansion = "Heart of Thorns"}},
         // Wing 2 - Salvation Pass
-        {"sloth", new FightInfo {Category = "Slothasor", Header = "Raid Wing 2 - Salvation Pass"}},
-        {"trio", new FightInfo {Category = "Bandit Trio", Header = "Raid Wing 2 - Salvation Pass", TrackedEnemies = 3}},
-        {"matt", new FightInfo {Category = "Matthias Gabrel", Header = "Raid Wing 2 - Salvation Pass"}},
+        {"sloth", new FightInfo {Boss = "Slothasor", Header = "Raid Wing 2 - Salvation Pass", Expansion = "Heart of Thorns"}},
+        {"trio", new FightInfo {Boss = "Bandit Trio", Header = "Raid Wing 2 - Salvation Pass", Expansion = "Heart of Thorns", TrackedEnemies = 3}},
+        {"matt", new FightInfo {Boss = "Matthias Gabrel", Header = "Raid Wing 2 - Salvation Pass", Expansion = "Heart of Thorns"}},
         // Wing 3 - Stronghold of the Faithful
-        {"esc", new FightInfo {Category = "Siege the Stronghold", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
-        {"kc", new FightInfo {Category = "Keep Construct", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
-        {"tc", new FightInfo {Category = "Twisted Castle", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
-        {"xera", new FightInfo {Category = "Xera", Header = "Raid Wing 3 - Stronghold of the Faithful"}},
+        {"esc", new FightInfo {Boss = "Siege the Stronghold", Header = "Raid Wing 3 - Stronghold of the Faithful", Expansion = "Heart of Thorns"}},
+        {"kc", new FightInfo {Boss = "Keep Construct", Header = "Raid Wing 3 - Stronghold of the Faithful", Expansion = "Heart of Thorns"}},
+        {"tc", new FightInfo {Boss = "Twisted Castle", Header = "Raid Wing 3 - Stronghold of the Faithful", Expansion = "Heart of Thorns"}},
+        {"xera", new FightInfo {Boss = "Xera", Header = "Raid Wing 3 - Stronghold of the Faithful", Expansion = "Heart of Thorns"}},
         // Wing 4 - Bastion of the Penitent
-        {"cairn", new FightInfo {Category = "Cairn the Indomitable", Header = "Raid Wing 4 - Bastion of the Penitent"}},
-        {"mo", new FightInfo {Category = "Mursaat Overseer", Header = "Raid Wing 4 - Bastion of the Penitent"}},
-        {"sam", new FightInfo {Category = "Samarog", Header = "Raid Wing 4 - Bastion of the Penitent"}},
-        {"dei", new FightInfo {Category = "Deimos", Header = "Raid Wing 4 - Bastion of the Penitent"}},
+        {"cairn", new FightInfo {Boss = "Cairn the Indomitable", Header = "Raid Wing 4 - Bastion of the Penitent", Expansion = "Heart of Thorns"}},
+        {"mo", new FightInfo {Boss = "Mursaat Overseer", Header = "Raid Wing 4 - Bastion of the Penitent", Expansion = "Heart of Thorns"}},
+        {"sam", new FightInfo {Boss = "Samarog", Header = "Raid Wing 4 - Bastion of the Penitent", Expansion = "Heart of Thorns"}},
+        {"dei", new FightInfo {Boss = "Deimos", Header = "Raid Wing 4 - Bastion of the Penitent", Expansion = "Heart of Thorns"}},
         // Wing 5 - Hall of Chains
-        {"sh", new FightInfo {Category = "Soulless Horror", Header = "Raid Wing 5 - Hall of Chains"}},
-        {"rr", new FightInfo {Category = "River of Souls", Header = "Raid Wing 5 - Hall of Chains"}},
-        {"bk", new FightInfo {Category = "Broken King", Header = "Raid Wing 5 - Hall of Chains"}},
-        {"se", new FightInfo {Category = "Eater of Souls", Header = "Raid Wing 5 - Hall of Chains"}},
-        {"eyes", new FightInfo {Category = "Statue of Darkness", Header = "Raid Wing 5 - Hall of Chains"}},
-        {"dhuum", new FightInfo {Category = "Dhuum", Header = "Raid Wing 5 - Hall of Chains"}},
+        {"sh", new FightInfo {Boss = "Soulless Horror", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
+        {"rr", new FightInfo {Boss = "River of Souls", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
+        {"bk", new FightInfo {Boss = "Broken King", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
+        {"se", new FightInfo {Boss = "Eater of Souls", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
+        {"eyes", new FightInfo {Boss = "Statue of Darkness", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
+        {"dhuum", new FightInfo {Boss = "Dhuum", Header = "Raid Wing 5 - Hall of Chains", Expansion = "Path of Fire"}},
         // Wing 6 - Mythwright Gambit
-        {"ca", new FightInfo {Category = "Conjured Amalgamate", Header = "Raid Wing 6 - Mythwright Gambit"}},
-        {"twins", new FightInfo {Category = "Twin Largos", Header = "Raid Wing 6 - Mythwright Gambit", TrackedEnemies = 2}},
-        {"qadim", new FightInfo {Category = "Qadim", Header = "Raid Wing 6 - Mythwright Gambit"}},
+        {"ca", new FightInfo {Boss = "Conjured Amalgamate", Header = "Raid Wing 6 - Mythwright Gambit", Expansion = "Path of Fire"}},
+        {"twins", new FightInfo {Boss = "Twin Largos", Header = "Raid Wing 6 - Mythwright Gambit", Expansion = "Path of Fire", TrackedEnemies = 2}},
+        {"qadim", new FightInfo {Boss = "Qadim", Header = "Raid Wing 6 - Mythwright Gambit", Expansion = "Path of Fire"}},
         // Wing 7 - The Key of Ahdashim
-        {"adina", new FightInfo {Category = "Cardinal Adina", Header = "Raid Wing 7 - The Key of Ahdashim"}},
-        {"sabir", new FightInfo {Category = "Cardinal Sabir", Header = "Raid Wing 7 - The Key of Ahdashim"}},
-        {"qpeer", new FightInfo {Category = "Qadim the Peerless", Header = "Raid Wing 7 - The Key of Ahdashim"}},
+        {"adina", new FightInfo {Boss = "Cardinal Adina", Header = "Raid Wing 7 - The Key of Ahdashim", Expansion = "Path of Fire"}},
+        {"sabir", new FightInfo {Boss = "Cardinal Sabir", Header = "Raid Wing 7 - The Key of Ahdashim", Expansion = "Path of Fire"}},
+        {"qpeer", new FightInfo {Boss = "Qadim the Peerless", Header = "Raid Wing 7 - The Key of Ahdashim", Expansion = "Path of Fire"}},
         // Wing 8 - Mount Balrior
-        {"greer", new FightInfo {Category = "Greer, the Blightbringer", Header = "Raid Wing 8 - Mount Balrior"}},
-        {"deci", new FightInfo {Category = "Decima, the Stormsinger", Header = "Raid Wing 8 - Mount Balrior"}},
-        {"ura", new FightInfo {Category = "Ura, the Steamshrieker", Header = "Raid Wing 8 - Mount Balrior"}},
+        {"greer", new FightInfo {Boss = "Greer, the Blightbringer", Header = "Raid Wing 8 - Mount Balrior", Expansion = "Janthir Wilds"}},
+        {"deci", new FightInfo {Boss = "Decima, the Stormsinger", Header = "Raid Wing 8 - Mount Balrior", Expansion = "Janthir Wilds"}},
+        {"ura", new FightInfo {Boss = "Ura, the Steamshrieker", Header = "Raid Wing 8 - Mount Balrior", Expansion = "Janthir Wilds"}},
         
-        // STRIKES
+        // RAIDS
         // Core Game
-        {"olc", new FightInfo {Category = "Old Lion's Court", Header = "Core Game Strikes", TrackedEnemies = 3}},
-        {"frezi", new FightInfo {Category = "Secret Lair of the Snowmen", Header = "Core Game Strikes"}},
+        {"olc", new FightInfo {Boss = "Watchknight Triumvirate", Header = "Old Lion's Court", Expansion = "Core Game", TrackedEnemies = 3}},
+        {"frezi", new FightInfo {Boss = "Freezie", Header = "Secret Lair of the Snowmen", Expansion = "Core Game"}},
         // Icebrood Saga
-        {"ice", new FightInfo {Category = "Icebrood Construct", Header = "Icebrood Saga Strikes"}},
-        {"falln", new FightInfo {Category = "The Voice and the Claw", Header = "Icebrood Saga Strikes"}},
-        {"frae", new FightInfo {Category = "Fraenir of Jormag", Header = "Icebrood Saga Strikes"}},
-        {"bone", new FightInfo {Category = "Boneskinner", Header = "Icebrood Saga Strikes"}},
-        {"whisp", new FightInfo {Category = "Whisper of Jormag", Header = "Icebrood Saga Strikes"}},
+        {"ice", new FightInfo {Boss = "Legendary Icebrood Construct", Header = "Shiverpeaks Pass", Expansion = "The Icebrood Saga"}},
+        {"falln", new FightInfo {Boss = "The Voice and the Claw", Header = "The Voice of the Fallen and Claw of the Fallen", Expansion = "The Icebrood Saga", TrackedEnemies = 2}},
+        {"frae", new FightInfo {Boss = "Fraenir of Jormag", Header = "Fraenir of Jormag", Expansion = "The Icebrood Saga"}},
+        {"bone", new FightInfo {Boss = "Boneskinner", Header = "Boneskinner", Expansion = "The Icebrood Saga"}},
+        {"whisp", new FightInfo {Boss = "Whisper of Jormag", Header = "Whisper of Jormag", Expansion = "The Icebrood Saga"}},
         // End of Dragons
-        {"trin", new FightInfo {Category = "Aetherblade Hideout", Header = "End of Dragons Strikes"}},
-        {"ankka", new FightInfo {Category = "Xunlai Jade Junkyard", Header = "End of Dragons Strikes"}},
-        {"li", new FightInfo {Category = "Kaineng Overlook", Header = "End of Dragons Strikes"}},
-        {"void", new FightInfo {Category = "Harvest Temple", Header = "End of Dragons Strikes", TrackedEnemies = 9}},
+        {"trin", new FightInfo {Boss = "Captain Mai Trin", Header = "Aetherblade Hideout", Expansion = "End of Dragons"}},
+        {"ankka", new FightInfo {Boss = "Ankka", Header = "Xunlai Jade Junkyard", Expansion = "End of Dragons"}},
+        {"li", new FightInfo {Boss = "Minister Li", Header = "Kaineng Overlook", Expansion = "End of Dragons"}}, // TODO - Check to see if need tracked enemies for Enforcer, Ritualist, Mindblade, Mech Rider & Sniper
+        {"void", new FightInfo {Boss = "The Dragonvoid", Header = "Harvest Temple", Expansion = "End of Dragons", TrackedEnemies = 9}},
         // Secrets of the Obscure
-        {"dagda", new FightInfo {Category = "Cosmic Observatory", Header = "Secrets of the Obscure Strikes"}},
-        {"cerus", new FightInfo {Category = "Temple of Febe", Header = "Secrets of the Obscure Strikes"}},
+        {"dagda", new FightInfo {Boss = "Dagda", Header = "Cosmic Observatory", Expansion = "Secrets of the Obscure"}},
+        {"cerus", new FightInfo {Boss = "Cerus", Header = "Temple of Febe", Expansion = "Secrets of the Obscure"}},
         // Visions of Eternity
-        {"boss", new FightInfo {Category = "Guardian's Glade", Header = "Visions of Eternity Strikes"}},
+        {"boss", new FightInfo {Boss = "Kela, Seneschal of Waves", Header = "Guardian's Glade", Expansion = "Visions of Eternity"}},
         
-        // Fractals
+        // FRACTALS
         // Nightmare
-        {"mama", new FightInfo {Category = "MAMA", Header = "Nightmare Fractal"}},
-        {"siax", new FightInfo {Category = "Siax the Corrupted", Header = "Nightmare Fractal"}},
-        {"enso", new FightInfo {Category = "Ensolyss of the Endless Torment", Header = "Nightmare Fractal"}},
+        {"mama", new FightInfo {Boss = "MAMA", Header = "Nightmare", Expansion = "Fractals"}},
+        {"siax", new FightInfo {Boss = "Siax the Corrupted", Header = "Nightmare", Expansion = "Fractals"}},
+        {"enso", new FightInfo {Boss = "Ensolyss of the Endless Torment", Header = "Nightmare", Expansion = "Fractals"}},
         // Shattered Observatory
-        {"skor", new FightInfo {Category = "Skorvald", Header = "Shattered Observatory Fractal"}},
-        {"arriv", new FightInfo {Category = "Artsariiv", Header = "Shattered Observatory Fractal"}},
-        {"arkk", new FightInfo {Category = "Arkk", Header = "Shattered Observatory Fractal"}},
+        {"skor", new FightInfo {Boss = "Skorvald", Header = "Shattered Observatory", Expansion = "Fractals"}},
+        {"arriv", new FightInfo {Boss = "Artsariiv", Header = "Shattered Observatory", Expansion = "Fractals"}},
+        {"arkk", new FightInfo {Boss = "Arkk", Header = "Shattered Observatory", Expansion = "Fractals"}},
         // Sunqua Peak
-        {"ai", new FightInfo {Category = "Ai, Keeper of the Peak", Header = "Sunqua Peak Fractal"}}, // Elemental or Dark Ai
+        {"ai", new FightInfo {Boss = "Ai, Keeper of the Peak", Header = "Sunqua Peak", Expansion = "Fractals"}}, // Elemental or Dark Ai
         // Silent Surf
-        {"kana", new FightInfo {Category = "Kanaxai, Scythe of House Aurkus", Header = "Silent Surf Fractal"}},
+        {"kana", new FightInfo {Boss = "Kanaxai, Scythe of House Aurkus", Header = "Silent Surf", Expansion = "Fractals"}},
         // Lonely Tower
-        {"eparc", new FightInfo {Category = "Eparch", Header = "Lonely Tower Fractal"}},
+        {"eparc", new FightInfo {Boss = "Eparch", Header = "Lonely Tower", Expansion = "Fractals"}},
         // Kinfall
-        {"ws", new FightInfo {Category = "Whispering Shadow", Header = "Kinfall Fractal"}},
+        {"ws", new FightInfo {Boss = "Whispering Shadow", Header = "Kinfall", Expansion = "Fractals"}},
         
-        // Uncategorized
-        {"golem", new FightInfo {Category = "Golem", Header = "Uncategorized"}},
-        {"wvw", new FightInfo {Category = "World Versus World", Header = "Uncategorized"}},
+        // UNCATEGORIZED
+        {"golem", new FightInfo {Boss = "Golem", Expansion = "Uncategorized"}},
+        {"wvw", new FightInfo {Boss = "World Versus World", Expansion = "Uncategorized"}},
         // {"boss", new FightInfo {Category = "Uncategorized Boss", Header = "Uncategorized"}}, // TODO Re-Enable this once Guardian's Glade boss gets its own code
     };
 
@@ -106,7 +106,6 @@ public partial class Form1 : Form
         
         // Setup Initial Info
         AssignMarkup();
-        AssignClassification();
         
         var client = new HttpClient();
         var checkingResponse = await client.GetAsync("https://dps.report/");
@@ -114,36 +113,45 @@ public partial class Form1 : Form
         var errorConnecting = connected
             ? "" : "Unable to connect to `dps.report`. Kill logs not marked.";
 
+        var previousExpansion = "";
         var previousHeader = "";
         var previousBossKey = "";
         var listedLogs = textBoxLinks.Text;
-        var formattedLogs = Write("LOGS", Markup.Title);
+        var formattedLogs = "";
         using (var reader = new StringReader(listedLogs))
         {
             while (true)
             {
+                var preface = "> ";
                 var line = reader.ReadLine();
                 if (line == null)
                     break;
                 if (!line.Contains('_'))
                     continue;
                 var key = line.Split("_")[1];
-                if (_showHeader && !_logCategories.ContainsKey(key))
-                    formattedLogs += Write("UNKNOWN LOG", Markup.Header);
-                else if ((_showCategory || _showHeader) && key != previousBossKey)
+                if (!_logCategories.ContainsKey(key))
+                    formattedLogs += Write("UNKNOWN LOG", Markup.Expansion);
+                else if (key != previousBossKey)
                 {
+                    var expansion = _logCategories[key].Expansion;
+                    if (previousExpansion != expansion)
+                    {
+                        previousExpansion = expansion;
+                        formattedLogs += Write(expansion, Markup.Expansion);
+                    }
+                    
                     var header = _logCategories[key].Header;
-                    if (_showHeader && previousHeader != header)
+                    if (previousHeader != header)
                     {
                         previousHeader = header;
                         formattedLogs += Write(header, Markup.Header);
                     }
 
-                    var category = _logCategories[key].Category;
-                    if (_showCategory && previousBossKey != category)
+                    var boss = _logCategories[key].Boss;
+                    if (previousBossKey != boss)
                     {
-                        previousBossKey = category;
-                        formattedLogs += Write(category, Markup.Category);
+                        previousBossKey = boss;
+                        formattedLogs += Write(boss, Markup.Boss);
                     }
                 }
                 
@@ -169,7 +177,10 @@ public partial class Form1 : Form
                             }
 
                             if (successfulKill)
-                                formattedLogs += "Kill Log: ";
+                            {
+                                preface = "";
+                                formattedLogs += "> **Kill Log → ** ";
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -179,7 +190,7 @@ public partial class Form1 : Form
                 }
 
                 // Write Log
-                formattedLogs += Write(line, Markup.None);
+                formattedLogs += Write(preface + line, Markup.None);
             }
         }
 
@@ -195,35 +206,33 @@ public partial class Form1 : Form
 
     public class FightInfo
     {
-        public string Category { get; init; } = "";
+        public string Expansion { get; init; } = "";
         public string Header { get; init; } = "";
+        public string Boss { get; init; } = "";
         public int TrackedEnemies { get; init; } = 1;
     }
     
     #region Markup
-    private string _titleMarkupStart, _titleMarkupEnd,
+    private string _expansionMarkupStart, _expansionMarkupEnd,
                    _headerMarkupStart, _headerMarkupEnd,
-                   _categoryMarkupStart, _categoryMarkupEnd,
+                   _bossMarkupStart, _bossMarkupEnd,
                    _endingMarkupStart, _endingMarkupEnd;
 
     private void AssignMarkup()
     {
-        _titleMarkupStart = "";
-        _titleMarkupEnd = "";
-        _headerMarkupStart = "";
-        _headerMarkupEnd = "";
-        _categoryMarkupStart = "";
-        _categoryMarkupEnd = "";
+        _expansionMarkupStart = _expansionMarkupEnd = "";
+        _headerMarkupStart = _headerMarkupEnd = "";
+        _bossMarkupStart = _bossMarkupEnd = "";
         _endingMarkupStart = "\r\n";
         _endingMarkupEnd = "";
 
         if (comboboxMarkup.Text != "Discord")
             return;
-        _titleMarkupStart = "# __";
-        _titleMarkupEnd = "__";
+        _expansionMarkupStart = "# __";
+        _expansionMarkupEnd = "__";
         _headerMarkupStart = "## ";
-        _categoryMarkupStart = "***";
-        _categoryMarkupEnd = "***";
+        _bossMarkupStart = "__**";
+        _bossMarkupEnd = "**__";
         _endingMarkupStart = "\r\n-# ";
     }
 
@@ -231,17 +240,17 @@ public partial class Form1 : Form
     {
         var startMarkup = markup switch
         {
-            Markup.Title => _titleMarkupStart,
+            Markup.Expansion => _expansionMarkupStart,
             Markup.Header => _headerMarkupStart,
-            Markup.Category => _categoryMarkupStart,
+            Markup.Boss => _bossMarkupStart,
             Markup.Ending => _endingMarkupStart,
             _ => ""
         };
         var endMarkup = markup switch
         {
-            Markup.Title => _titleMarkupEnd,
+            Markup.Expansion => _expansionMarkupEnd,
             Markup.Header => _headerMarkupEnd,
-            Markup.Category => _categoryMarkupEnd,
+            Markup.Boss => _bossMarkupEnd,
             Markup.Ending => _endingMarkupEnd,
             _ => ""
         };
@@ -250,36 +259,11 @@ public partial class Form1 : Form
 
     public enum Markup
     {
-        Title,
+        Expansion,
         Header,
-        Category,
+        Boss,
         Ending,
         None
-    }
-    #endregion
-    
-    #region Classifications
-
-    private bool _showCategory;
-    private bool _showHeader;
-    
-    private void AssignClassification()
-    {
-        _showCategory = false;
-        _showHeader = false;
-        switch (comboboxClassifications.Text)
-        {
-            case "All Categories":
-                _showCategory = true;
-                _showHeader = true;
-                break;
-            case "Only Main Categories":
-                _showHeader = true;
-                break;
-            case "Only Sub Categories":
-                _showCategory = true;
-                break;
-        }
     }
     #endregion
 }
