@@ -73,7 +73,7 @@ public partial class Form1 : Form
         {"dagda", new FightInfo {Boss = "Dagda", Header = "Cosmic Observatory", Expansion = "Secrets of the Obscure"}},
         {"cerus", new FightInfo {Boss = "Cerus", Header = "Temple of Febe", Expansion = "Secrets of the Obscure"}},
         // Visions of Eternity
-        {"boss", new FightInfo {Boss = "Kela, Seneschal of Waves", Header = "Guardian's Glade", Expansion = "Visions of Eternity"}},
+        {"kela", new FightInfo {Boss = "Kela, Seneschal of Waves", Header = "Guardian's Glade", Expansion = "Visions of Eternity"}},
         
         // FRACTALS
         // Nightmare
@@ -96,7 +96,7 @@ public partial class Form1 : Form
         // UNCATEGORIZED
         {"golem", new FightInfo {Boss = "Golem", Expansion = "Uncategorized"}},
         {"wvw", new FightInfo {Boss = "World Versus World", Expansion = "Uncategorized"}},
-        // {"boss", new FightInfo {Category = "Uncategorized Boss", Header = "Uncategorized"}}, // TODO Re-Enable this once Guardian's Glade boss gets its own code
+        {"boss", new FightInfo {Boss = "Uncategorized Boss", Expansion = "Uncategorized"}},
     };
 
     private async void buttonFormat_Click(object sender, EventArgs e)
