@@ -130,7 +130,13 @@ public partial class Form1 : Form
                     continue;
                 var key = line.Split("_")[1];
                 if (!_logCategories.ContainsKey(key))
-                    formattedLogs += Write("UNKNOWN LOG", Markup.Expansion);
+                {
+                    if (previousExpansion != "Unknown Log")
+                    {
+                        previousExpansion = "Unknown Log";
+                        formattedLogs += Write("UNKNOWN LOG(S)", Markup.Expansion);
+                    }
+                }
                 else if (key != previousBossKey)
                 {
                     var expansion = _logCategories[key].Expansion;
