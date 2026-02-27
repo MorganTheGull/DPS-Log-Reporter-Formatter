@@ -37,6 +37,10 @@ partial class Form1
         buttonFormat = new System.Windows.Forms.Button();
         textBoxLinks = new System.Windows.Forms.TextBox();
         textBoxFormatted = new System.Windows.Forms.TextBox();
+        label2 = new System.Windows.Forms.Label();
+        checkBoxExpansion = new System.Windows.Forms.CheckBox();
+        checkBoxArea = new System.Windows.Forms.CheckBox();
+        checkBoxBoss = new System.Windows.Forms.CheckBox();
         SuspendLayout();
         // 
         // labelTitle
@@ -54,7 +58,7 @@ partial class Form1
         comboboxMarkup.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         comboboxMarkup.FormattingEnabled = true;
         comboboxMarkup.Items.AddRange(new object[] { "Discord", "None" });
-        comboboxMarkup.Location = new System.Drawing.Point(213, 186);
+        comboboxMarkup.Location = new System.Drawing.Point(26, 186);
         comboboxMarkup.Name = "comboboxMarkup";
         comboboxMarkup.Size = new System.Drawing.Size(350, 53);
         comboboxMarkup.TabIndex = 2;
@@ -63,7 +67,7 @@ partial class Form1
         // label1
         // 
         label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(213, 103);
+        label1.Location = new System.Drawing.Point(26, 103);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(350, 60);
         label1.TabIndex = 1;
@@ -121,12 +125,62 @@ partial class Form1
         textBoxFormatted.Size = new System.Drawing.Size(350, 304);
         textBoxFormatted.TabIndex = 7;
         // 
+        // label2
+        // 
+        label2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+        label2.Location = new System.Drawing.Point(399, 103);
+        label2.Name = "label2";
+        label2.Size = new System.Drawing.Size(350, 60);
+        label2.TabIndex = 8;
+        label2.Text = "Show";
+        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // checkBoxExpansion
+        // 
+        checkBoxExpansion.Checked = true;
+        checkBoxExpansion.CheckState = System.Windows.Forms.CheckState.Checked;
+        checkBoxExpansion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        checkBoxExpansion.Location = new System.Drawing.Point(399, 186);
+        checkBoxExpansion.Name = "checkBoxExpansion";
+        checkBoxExpansion.Size = new System.Drawing.Size(114, 53);
+        checkBoxExpansion.TabIndex = 9;
+        checkBoxExpansion.Text = "Expansion";
+        checkBoxExpansion.UseVisualStyleBackColor = true;
+        // 
+        // checkBoxArea
+        // 
+        checkBoxArea.Checked = true;
+        checkBoxArea.CheckState = System.Windows.Forms.CheckState.Checked;
+        checkBoxArea.Font = new System.Drawing.Font("Segoe UI", 12F);
+        checkBoxArea.Location = new System.Drawing.Point(519, 186);
+        checkBoxArea.Name = "checkBoxArea";
+        checkBoxArea.Size = new System.Drawing.Size(110, 53);
+        checkBoxArea.TabIndex = 10;
+        checkBoxArea.Text = "Area";
+        checkBoxArea.UseVisualStyleBackColor = true;
+        // 
+        // checkBoxBoss
+        // 
+        checkBoxBoss.Checked = true;
+        checkBoxBoss.CheckState = System.Windows.Forms.CheckState.Checked;
+        checkBoxBoss.Font = new System.Drawing.Font("Segoe UI", 12F);
+        checkBoxBoss.Location = new System.Drawing.Point(635, 186);
+        checkBoxBoss.Name = "checkBoxBoss";
+        checkBoxBoss.Size = new System.Drawing.Size(114, 53);
+        checkBoxBoss.TabIndex = 11;
+        checkBoxBoss.Text = "Boss";
+        checkBoxBoss.UseVisualStyleBackColor = true;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.ControlDarkDark;
         ClientSize = new System.Drawing.Size(784, 761);
+        Controls.Add(checkBoxBoss);
+        Controls.Add(checkBoxArea);
+        Controls.Add(checkBoxExpansion);
+        Controls.Add(label2);
         Controls.Add(textBoxFormatted);
         Controls.Add(textBoxLinks);
         Controls.Add(buttonFormat);
@@ -139,6 +193,12 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.CheckBox checkBoxExpansion;
+    private System.Windows.Forms.CheckBox checkBoxArea;
+    private System.Windows.Forms.CheckBox checkBoxBoss;
+
+    private System.Windows.Forms.Label label2;
 
     private System.Windows.Forms.TextBox textBoxFormatted;
 
