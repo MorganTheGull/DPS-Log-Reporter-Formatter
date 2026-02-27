@@ -38,9 +38,7 @@ partial class Form1
         textBoxLinks = new System.Windows.Forms.TextBox();
         textBoxFormatted = new System.Windows.Forms.TextBox();
         label2 = new System.Windows.Forms.Label();
-        checkBoxExpansion = new System.Windows.Forms.CheckBox();
-        checkBoxArea = new System.Windows.Forms.CheckBox();
-        checkBoxBoss = new System.Windows.Forms.CheckBox();
+        Theere = new System.Windows.Forms.ComboBox();
         SuspendLayout();
         // 
         // labelTitle
@@ -135,41 +133,17 @@ partial class Form1
         label2.Text = "Show";
         label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
-        // checkBoxExpansion
+        // Theere
         // 
-        checkBoxExpansion.Checked = true;
-        checkBoxExpansion.CheckState = System.Windows.Forms.CheckState.Checked;
-        checkBoxExpansion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        checkBoxExpansion.Location = new System.Drawing.Point(399, 186);
-        checkBoxExpansion.Name = "checkBoxExpansion";
-        checkBoxExpansion.Size = new System.Drawing.Size(114, 53);
-        checkBoxExpansion.TabIndex = 9;
-        checkBoxExpansion.Text = "Expansion";
-        checkBoxExpansion.UseVisualStyleBackColor = true;
-        // 
-        // checkBoxArea
-        // 
-        checkBoxArea.Checked = true;
-        checkBoxArea.CheckState = System.Windows.Forms.CheckState.Checked;
-        checkBoxArea.Font = new System.Drawing.Font("Segoe UI", 12F);
-        checkBoxArea.Location = new System.Drawing.Point(519, 186);
-        checkBoxArea.Name = "checkBoxArea";
-        checkBoxArea.Size = new System.Drawing.Size(110, 53);
-        checkBoxArea.TabIndex = 10;
-        checkBoxArea.Text = "Area";
-        checkBoxArea.UseVisualStyleBackColor = true;
-        // 
-        // checkBoxBoss
-        // 
-        checkBoxBoss.Checked = true;
-        checkBoxBoss.CheckState = System.Windows.Forms.CheckState.Checked;
-        checkBoxBoss.Font = new System.Drawing.Font("Segoe UI", 12F);
-        checkBoxBoss.Location = new System.Drawing.Point(635, 186);
-        checkBoxBoss.Name = "checkBoxBoss";
-        checkBoxBoss.Size = new System.Drawing.Size(114, 53);
-        checkBoxBoss.TabIndex = 11;
-        checkBoxBoss.Text = "Boss";
-        checkBoxBoss.UseVisualStyleBackColor = true;
+        Theere.DisplayMember = "Everything";
+        Theere.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        Theere.FormattingEnabled = true;
+        Theere.Items.AddRange(new object[] { "Everything", "Area Only", "Boss Only" });
+        Theere.Location = new System.Drawing.Point(399, 186);
+        Theere.Name = "Theere";
+        Theere.Size = new System.Drawing.Size(350, 53);
+        Theere.TabIndex = 9;
+        Theere.Text = "Everything";
         // 
         // Form1
         // 
@@ -177,9 +151,7 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.ControlDarkDark;
         ClientSize = new System.Drawing.Size(784, 761);
-        Controls.Add(checkBoxBoss);
-        Controls.Add(checkBoxArea);
-        Controls.Add(checkBoxExpansion);
+        Controls.Add(Theere);
         Controls.Add(label2);
         Controls.Add(textBoxFormatted);
         Controls.Add(textBoxLinks);
@@ -194,9 +166,7 @@ partial class Form1
         PerformLayout();
     }
 
-    private System.Windows.Forms.CheckBox checkBoxExpansion;
-    private System.Windows.Forms.CheckBox checkBoxArea;
-    private System.Windows.Forms.CheckBox checkBoxBoss;
+    private System.Windows.Forms.ComboBox Theere;
 
     private System.Windows.Forms.Label label2;
 

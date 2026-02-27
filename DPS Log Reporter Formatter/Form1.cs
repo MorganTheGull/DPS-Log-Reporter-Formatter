@@ -139,7 +139,7 @@ public partial class Form1 : Form
                 }
                 else if (key != previousBossKey)
                 {
-                    if (checkBoxExpansion.Checked)
+                    if (false) // We are not showing Expansion
                     {
                         var expansion = _logCategories[key].Expansion;
                         if (previousExpansion != expansion)
@@ -149,7 +149,7 @@ public partial class Form1 : Form
                         }
                     }
 
-                    if (checkBoxArea.Checked)
+                    if (comboBoxShow.Text is "Everything" or "Area Only")
                     {
                         var area = _logCategories[key].Area;
                         if (previousArea != area && area != "")
@@ -159,7 +159,7 @@ public partial class Form1 : Form
                         }
                     }
 
-                    if (checkBoxBoss.Checked)
+                    if (comboBoxShow.Text is "Everything" or "Boss Only")
                     {
                         var boss = _logCategories[key].Boss;
                         if (previousBossKey != boss)
