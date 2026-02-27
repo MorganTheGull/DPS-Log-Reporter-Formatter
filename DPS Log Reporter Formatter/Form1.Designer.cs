@@ -38,7 +38,7 @@ partial class Form1
         textBoxLinks = new System.Windows.Forms.TextBox();
         textBoxFormatted = new System.Windows.Forms.TextBox();
         label2 = new System.Windows.Forms.Label();
-        Theere = new System.Windows.Forms.ComboBox();
+        comboBoxShow = new System.Windows.Forms.ComboBox();
         SuspendLayout();
         // 
         // labelTitle
@@ -133,17 +133,17 @@ partial class Form1
         label2.Text = "Show";
         label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
-        // Theere
+        // comboBoxShow
         // 
-        Theere.DisplayMember = "Everything";
-        Theere.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        Theere.FormattingEnabled = true;
-        Theere.Items.AddRange(new object[] { "Everything", "Area Only", "Boss Only" });
-        Theere.Location = new System.Drawing.Point(399, 186);
-        Theere.Name = "Theere";
-        Theere.Size = new System.Drawing.Size(350, 53);
-        Theere.TabIndex = 9;
-        Theere.Text = "Everything";
+        comboBoxShow.DisplayMember = "Everything";
+        comboBoxShow.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        comboBoxShow.FormattingEnabled = true;
+        comboBoxShow.Items.AddRange(new object[] { "Everything", "Area Only", "Boss Only" });
+        comboBoxShow.Location = new System.Drawing.Point(399, 186);
+        comboBoxShow.Name = "comboBoxShow";
+        comboBoxShow.Size = new System.Drawing.Size(350, 53);
+        comboBoxShow.TabIndex = 9;
+        comboBoxShow.Text = "Everything";
         // 
         // Form1
         // 
@@ -151,7 +151,7 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.ControlDarkDark;
         ClientSize = new System.Drawing.Size(784, 761);
-        Controls.Add(Theere);
+        Controls.Add(comboBoxShow);
         Controls.Add(label2);
         Controls.Add(textBoxFormatted);
         Controls.Add(textBoxLinks);
@@ -166,7 +166,7 @@ partial class Form1
         PerformLayout();
     }
 
-    private System.Windows.Forms.ComboBox Theere;
+    private System.Windows.Forms.ComboBox comboBoxShow;
 
     private System.Windows.Forms.Label label2;
 
