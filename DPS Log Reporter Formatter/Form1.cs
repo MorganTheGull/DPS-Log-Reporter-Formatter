@@ -94,9 +94,9 @@ public partial class Form1 : Form
         {"ws", new FightInfo {Boss = "Whispering Shadow", Area = "Kinfall", Expansion = "Fractals"}},
         
         // UNCATEGORIZED
-        {"golem", new FightInfo {Boss = "Golem", Expansion = "Uncategorized"}},
-        {"wvw", new FightInfo {Boss = "World Versus World", Expansion = "Uncategorized"}},
-        {"boss", new FightInfo {Boss = "Uncategorized Boss", Expansion = "Uncategorized"}},
+        {"golem", new FightInfo {Boss = "Golem", Area = "Uncategorized", Expansion = "Uncategorized"}},
+        {"wvw", new FightInfo {Boss = "World Versus World", Area = "Uncategorized", Expansion = "Uncategorized"}},
+        {"boss", new FightInfo {Boss = "Uncategorized Boss", Area = "Uncategorized", Expansion = "Uncategorized"}},
     };
 
     private async void buttonFormat_Click(object sender, EventArgs e)
