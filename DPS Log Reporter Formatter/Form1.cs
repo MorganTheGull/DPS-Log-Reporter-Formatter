@@ -67,7 +67,7 @@ public partial class Form1 : Form
         // End of Dragons
         {"trin", new FightInfo {Boss = "Captain Mai Trin", Area = "Aetherblade Hideout", Expansion = "End of Dragons"}},
         {"ankka", new FightInfo {Boss = "Ankka", Area = "Xunlai Jade Junkyard", Expansion = "End of Dragons"}},
-        {"li", new FightInfo {Boss = "Minister Li", Area = "Kaineng Overlook", Expansion = "End of Dragons"}}, // TODO - Check to see if need tracked enemies for Enforcer, Ritualist, Mindblade, Mech Rider & Sniper
+        {"li", new FightInfo {Boss = "Minister Li", Area = "Kaineng Overlook", Expansion = "End of Dragons"}},
         {"void", new FightInfo {Boss = "The Dragonvoid", Area = "Harvest Temple", Expansion = "End of Dragons", TrackedEnemies = 9}},
         // Secrets of the Obscure
         {"dagda", new FightInfo {Boss = "Dagda", Area = "Cosmic Observatory", Expansion = "Secrets of the Obscure"}},
